@@ -10,10 +10,10 @@ function [out] = Efield(x, corDim, ki, sigma, phi, xi)
 %     end
 % end
  if x > corDim/2
-        out = (cos(ki*corDim/2-phi)+sin(ki*corDim/2-phi))*exp(-sigma*(x-corDim/2));
+        out = (cos(ki*corDim/2-phi))*exp(-sigma*(x-corDim/2));
     elseif x >= - corDim/2 && x <= corDim/2
-        out = cos(ki*x-phi)+(xi/ki)*sin(ki*x-phi);
+        out = cos(ki*x-phi);%+(xi/ki)*sin(ki*x-phi);
     else
-        out = exp(ki*x); 
+        out =cos(ki*corDim/2 + phi)*exp(xi*(x+corDim/2)); 
     end
 end
