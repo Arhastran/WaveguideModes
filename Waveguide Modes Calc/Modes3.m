@@ -1,19 +1,19 @@
 %Adam Ignaciuk 
 %Waveguide mode simulations 
 clear
-h = 15*1E-6; % core size width(x)
-h2 = 15*1E-6; %core size (y)
+h = 30*1E-6; % core size width(x)
+h2 = 30*1E-6; %core size (y)
 
 dist = 0.01*1E-6;
 
 %RI indices
 n_e = 1.739;
 n_o = 1.522;
-n_core = 2.038; %1.639
-n_clad = 1.41; 
+n_core = 1.477; %1.639
+n_clad = 1.476; 
 ns = n_clad; %RI below surface, I assume
 modes = 1;
-lambda = 647*1E-9%589*1E-9;  
+lambda = 589*1E-9;  
 k = 2*pi/lambda;
 
 
@@ -255,5 +255,7 @@ set(gca, 'XTickLabel', xticklabels);
 yticklabels = ((-h2)*1E6 : 5 : (h2)*1E6);
 set(gca, 'YTickLabel', yticklabels);
 
+
+   
 
    
